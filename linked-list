@@ -1,4 +1,3 @@
-```c
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -59,4 +58,3 @@ void CMyList::PrintData()
 	cout << " [ " << a << "개 ]" << endl;
 
 }
-```
