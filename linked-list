@@ -1,0 +1,62 @@
+```c
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+struct Node
+{
+	int data;
+	Node* link;
+};
+class CMyList
+{
+public:
+	CMyList() {
+	}
+	~CMyList() {
+	}
+	void Insert(int num);
+	void PrintData();
+private:
+	Node* pHead = nullptr;
+};
+
+int main() {
+	CMyList list;
+	list.Insert(20);
+	list.Insert(30);
+	list.Insert(40);
+	list.Insert(10);
+	list.PrintData();
+	return 0;
+}
+
+void CMyList::Insert(int num)
+{
+	Node* temp = new Node;
+	temp->data = num;
+	temp->link = nullptr;
+
+
+	if (pHead == nullptr) {
+		pHead  = temp;
+	}
+	else {
+		temp->link = pHead;
+		pHead  = temp;
+	}
+}
+
+void CMyList::PrintData()
+{
+	int a=0;
+	Node* ptr = pHead;
+	cout << "리스트 데이터 : ";
+	for (; ptr->link != nullptr; ptr = ptr->link) {
+		cout << ptr->data << " - ";
+		a++;
+	}
+	cout << ptr->data;
+	cout << " [ " << a << "개 ]" << endl;
+
+}
+```
